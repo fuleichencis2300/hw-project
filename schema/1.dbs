@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="hw" id="Project-14a7" database="MySql" >
+	<schema name="hw" >
+		<table name="billing dimension:" prior="tbl_0" >
+			<column name="billing class" type="INT" jt="4" mandatory="y" />
+			<column name="patient class" type="INT" jt="4" />
+			<column name="quantity desc" type="INT" jt="4" />
+			<column name="billed quantity" type="INT" jt="4" />
+			<index name="pk_billing dimension:" unique="PRIMARY_KEY" >
+				<column name="billing class" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="drug dimension:" prior="tbl_0" >
+			<column name="ndc" type="INT" jt="4" mandatory="y" />
+			<index name="pk_drug dimension:" unique="PRIMARY_KEY" >
+				<column name="ndc" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="fact table" prior="hospital procedures fact" spec="TEMPORARY" >
+			<column name="hospital tin" prior="hospital procedures fact" type="INT" jt="4" />
+			<column name="procedure code" type="INT" jt="4" />
+			<column name="modifier" type="INT" jt="4" />
+			<column name="ndc" type="INT" jt="4" />
+			<column name="rev code" type="INT" jt="4" />
+			<column name="apc" type="INT" jt="4" />
+			<column name="billing class" type="INT" jt="4" />
+			<column name="patient class" type="INT" jt="4" />
+			<column name="billed quantity" type="INT" jt="4" />
+			<column name="payer desc" type="VARCHAR" length="100" jt="12" />
+			<column name="rate" type="VARCHAR" length="100" jt="12" />
+			<column name="filename" type="VARCHAR" length="100" jt="12" />
+			<column name="file last updated" type="DATE" jt="91" />
+			<column name="payer category" type="DATE" jt="91" />
+			<column name="hospital ccn" type="VARCHAR" length="100" jt="12" />
+			<column name="rev desc" type="INT" jt="4" />
+			<column name="code type" type="INT" jt="4" />
+			<column name="quantity desc" prior="code" type="INT" jt="4" />
+			<column name="payer name" type="VARCHAR" length="100" jt="12" />
+			<column name="plan name" type="VARCHAR" length="100" jt="12" />
+			<column name="plan id" type="INT" jt="4" />
+			<column name="plan type" type="INT" jt="4" />
+			<column name="is medicare adv" type="INT" jt="4" />
+			<column name="rate method" type="INT" jt="4" />
+			<column name="rate desc" type="INT" jt="4" />
+			<column name="url" type="INT" jt="4" />
+			<column name="permalink" type="INT" jt="4" />
+			<column name="code" type="INT" jt="4" />
+			<column name="description" type="INT" jt="4" />
+			<index name="unq_fact table_hospital tin" unique="UNIQUE_KEY" >
+				<column name="hospital tin" />
+			</index>
+			<fk name="fk_fact table_fact table" to_schema="hw" to_table="hospital dimension:" >
+				<fk_column name="hospital tin" pk="hospital tin" />
+			</fk>
+			<fk name="fk_fact table" to_schema="hw" to_table="procedure dimension:" >
+				<fk_column name="procedure code" pk="procedure code" />
+			</fk>
+			<fk name="fk_fact table1" to_schema="hw" to_table="revenue code dimension:" >
+				<fk_column name="rev code" pk="rev code" />
+			</fk>
+			<fk name="fk_fact table_payer dimension" to_schema="hw" to_table="payer dimension" >
+				<fk_column name="payer desc" pk="payer desc" />
+			</fk>
+			<fk name="fk_fact table_2" to_schema="hw" to_table="filename dimension" >
+				<fk_column name="filename" pk="filename" />
+			</fk>
+			<fk name="fk_fact table_03" to_schema="hw" to_table="rate dimension:" >
+				<fk_column name="rate" pk="rate" />
+			</fk>
+			<fk name="fk_fact table_56" to_schema="hw" to_table="drug dimension:" >
+				<fk_column name="ndc" pk="ndc" />
+			</fk>
+			<fk name="fk_fact table8" to_schema="hw" to_table="insurance plan dimension:" >
+				<fk_column name="plan id" pk="plan id" />
+			</fk>
+			<fk name="fk_fact table_029" to_schema="hw" to_table="billing dimension:" >
+				<fk_column name="billing class" pk="billing class" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="filename dimension" prior="filename (primary key)filename dimension" >
+			<column name="filename" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="url" type="INT" jt="4" />
+			<column name="file last updated" prior="permalink" type="INT" jt="4" />
+			<column name="permalink" type="INT" jt="4" />
+			<index name="pk_filename dimension" unique="PRIMARY_KEY" >
+				<column name="filename" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="hospital dimension:" prior="tbl" >
+			<column name="hospital tin" prior="hospital tin (primary key)" type="INT" jt="4" mandatory="y" />
+			<column name="hospital ccn" prior="hospital code-meta" type="INT" jt="4" />
+			<column name="description" type="INT" jt="4" />
+			<index name="pk_hospital dimension:" unique="PRIMARY_KEY" >
+				<column name="hospital tin" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="insurance plan dimension:" prior="tbl_0" >
+			<column name="plan name" type="VARCHAR" length="100" jt="12" />
+			<column name="plan id" type="INT" jt="4" mandatory="y" />
+			<column name="plan type" type="INT" jt="4" >
+				<comment><![CDATA[Plan Typ]]></comment>
+			</column>
+			<column name="is medicare adv" type="INT" jt="4" />
+			<index name="pk_insurance plan dimension:" unique="PRIMARY_KEY" >
+				<column name="plan id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="payer dimension" prior="tbl" >
+			<column name="payer desc" prior="payer desc (primary key)" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="payer category" type="VARCHAR" length="100" jt="12" />
+			<column name="payer name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_payer dimension" unique="PRIMARY_KEY" >
+				<column name="payer desc" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="procedure dimension:" prior="tbl" >
+			<column name="procedure code" prior="procedure code (primary key)" type="INT" jt="4" mandatory="y" />
+			<column name="code type" type="INT" jt="4" />
+			<column name="code" type="INT" jt="4" />
+			<column name="modifier" type="INT" jt="4" />
+			<index name="pk_procedure dimension:" unique="PRIMARY_KEY" >
+				<column name="procedure code" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="rate dimension:" prior="tbl" >
+			<column name="rate" prior="rate (primary key)" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="rate method" type="INT" jt="4" />
+			<column name="rate desc" type="INT" jt="4" />
+			<index name="pk_rate dimension:" unique="PRIMARY_KEY" >
+				<column name="rate" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="revenue code dimension:" prior="tbl" >
+			<column name="rev code" prior="rev code (primary key)" type="INT" jt="4" mandatory="y" />
+			<column name="apc" type="INT" jt="4" />
+			<column name="rev desc" type="INT" jt="4" />
+			<index name="pk_revenue code dimension:" unique="PRIMARY_KEY" >
+				<column name="rev code" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="tbl" />
+	</schema>
+	<layout name="Default Layout" id="Layout-198b" show_relation="columns" >
+		<entity schema="hw" name="billing dimension:" color="C1D8EE" x="352" y="736" />
+		<entity schema="hw" name="drug dimension:" color="C1D8EE" x="576" y="80" />
+		<entity schema="hw" name="fact table" color="C1D8EE" x="352" y="192" />
+		<entity schema="hw" name="filename dimension" color="C1D8EE" x="64" y="304" />
+		<entity schema="hw" name="hospital dimension:" color="C1D8EE" x="48" y="144" />
+		<entity schema="hw" name="insurance plan dimension:" color="C1D8EE" x="608" y="336" />
+		<entity schema="hw" name="payer dimension" color="C1D8EE" x="80" y="448" />
+		<entity schema="hw" name="procedure dimension:" color="C1D8EE" x="656" y="208" />
+		<entity schema="hw" name="rate dimension:" color="C1D8EE" x="624" y="480" />
+		<entity schema="hw" name="revenue code dimension:" color="C1D8EE" x="352" y="48" />
+	</layout>
+</project>
