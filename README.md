@@ -10,7 +10,8 @@ The requirement fot this project is find out which insurance in data set i find 
 Requirement 2 is find out what class take more pay or covergy by insurence which is inpatient or outpatient.
 Requirement 3 is find out which payer category pay more.
 ## Data come from
-when i choice this topic and understand the business problem , process and requiremtn in go find a data in the websit in www.dolthub.com The url for the data is https://www.dolthub.com/repositories/piaskowna/transparency-in-pricing/data/main
+when i choice this topic and understand the business problem , process and requiremtn in go find a data in the websit in www.dolthub.com The url for the data is https://www.dolthub.com/repositories/piaskowna/transparency-in-pricing/data/main This what it look like before the webscript
+![image](https://github.com/fuleichencis2300/hw-project/assets/121892294/dd8b41d3-53ed-4291-8397-eb37b200c1d2)
 ## Webscript
 After i get the data set for my project i use webscript to get the data and the tool is use to do the webcsript is the python. the code is in the file i put. Also my coding is bad so the code is my professor help me to creat. after professor help me creat the code i use the code webscripe the data and upload to my azure storage account.
 ![image](https://github.com/fuleichencis2300/hw-project/assets/121892294/103fae05-d82c-4732-bd25-ef503c669132)
