@@ -69,7 +69,7 @@ number two image is following that show the which class is cost more many and wh
 We can see that almost all the insurnace cover and pay more inpatient and inside of them the superior ambetter exchange cover and paymore in the inpatient but it cover  the patine calss very low. 
 we also can see the almost all the insurance cover the patien class and is alomost same but BCBS POO paymore.For my case i will choice the aetna to be my insurance because it was more blance in both side.
 ![image](https://github.com/fuleichencis2300/hw-project/assets/121892294/72d37120-80db-4807-9f0c-9c616204fa52)
-This image is show the drug , Surgery cost cover bay payer i choice top 10 that has more people get those case as we can see
+This image is show the drug , Surgery cost cover bay payer i choice top 10 that has more people get those case as we can see aetna is  stay almost every case in top 3 or 5 so is good insurence to buy and this end of my project.
 
 
 
