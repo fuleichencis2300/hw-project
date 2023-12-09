@@ -56,7 +56,19 @@ i follow each step she told me and we use the team do the scren share so to chec
 ![image](https://github.com/fuleichencis2300/hw-project/assets/121892294/08a5c7fb-aace-4ef2-b5da-bc36224073d9)
 
 i cant fix this problem so is just use the data i clean in csv file to do the visual!.
-## visual 
+The following is the module for my cleanning data
+![image](https://github.com/fuleichencis2300/hw-project/assets/121892294/366e84ec-9e2a-40c2-a597-ced60b984ba0)
+## visual for data:
+The following image teh visual for my three requirment, this image show the payer catgory x rate
+![image](https://github.com/fuleichencis2300/hw-project/assets/121892294/85fa5774-5293-40fa-b389-7d9bf68db877)
+As you can see there are three catgory payer,cash and gross. gross is mean full pay which mean that no medical insurance is cover,cash mean the insurance only cover some part we need still pay.
+payer is mean the insurance full cover the cost as we see that almost every cost is pay by payer.
+number two image is following that show the which class is cost more many and which health insurance cover the inpatient and which cover patien class more.
+![image](https://github.com/fuleichencis2300/hw-project/assets/121892294/f3bf7391-2035-4e4c-83c8-59f8b5dfbe0e)
+![image](https://github.com/fuleichencis2300/hw-project/assets/121892294/99408582-b683-41cd-828b-02b7db8d92aa)
+We can see that almost all the insurnace cover and pay more inpatient and inside of them the superior ambetter exchange cover and paymore in the inpatient but it cover  the patine calss very low. 
+we also can see the almost all the insurance cover the patien class and is alomost same but BCBS POO paymore.
+![image](https://github.com/fuleichencis2300/hw-project/assets/121892294/72d37120-80db-4807-9f0c-9c616204fa52)
 
 
 
