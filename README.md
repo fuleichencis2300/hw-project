@@ -11,7 +11,8 @@ Requirement 2 is find out what class take more pay or covergy by insurence which
 Requirement 3 is find out which payer category pay more.
 ## Project process
 My project will following the precess below and  this image come from my team.
-![image](https://github.com/fuleichencis2300/hw-project/assets/121892294/c39afe14-eb0d-420d-9331-312bf0f700f5)
+![image](https://github.com/fuleichencis2300/hw-project/assets/121892294/f15d9dca-dc43-4908-8b92-c3e61ccf8e8f)
+
 
 ## Data come from
 when i choice this topic and understand the business problem , process and requiremtn in go find a data in the websit in www.dolthub.com The url for the data is https://www.dolthub.com/repositories/piaskowna/transparency-in-pricing/data/main This what it look like before the webscript
